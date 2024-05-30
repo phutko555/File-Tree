@@ -11,7 +11,6 @@ public class FileTreeImpl implements FileTree {
     public Optional<String> tree(Path path) {
         if (path == null || !Files.exists(path))
             return Optional.empty();
-
         try {
             return Optional.of(generateTree(path, "", true));
         } catch (IOException e) {
