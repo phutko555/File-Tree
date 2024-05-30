@@ -1,5 +1,4 @@
 package com.efimchick.ifmo.io.filetree;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
@@ -24,7 +23,7 @@ public class FileTreeImpl implements FileTree {
     private String generateTree(Path path, String prefix, boolean isLast) throws IOException {
         StringBuilder treeBuilder = new StringBuilder();
         String name = path.getFileName().toString();
-        String formattedName = isLast ? "└─ " + name : "├─ " + name;
+        String formattedName = isLast ? name : name;
 
         if (Files.isDirectory(path)) {
             List<Path> contents = getSortedContents(path);
